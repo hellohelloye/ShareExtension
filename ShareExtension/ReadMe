@@ -1,0 +1,51 @@
+
+//Sample APIs Data Fetched from SoundCloud
+/*
+sample url to get USER ID:
+https://api.soundcloud.com/resolve.json?url=https://soundcloud.com/little-iphone&client_id=df5d294f55d41469a70fc50c8b7040a4
+{
+"id": 138071006,
+"kind": "user",
+"permalink": "little-iphone",
+"username": "little iPhone",
+"last_modified": "2015/02/12 00:37:00 +0000",
+"uri": "https://api.soundcloud.com/users/138071006",
+"permalink_url": "http://soundcloud.com/little-iphone",
+"avatar_url": "https://a1.sndcdn.com/images/default_avatar_large.png",
+"country": null,
+"first_name": null,
+"last_name": null,
+"full_name": "",
+"description": null,
+"city": null,
+"discogs_name": null,
+"myspace_name": null,
+"website": null,
+"website_title": null,
+"online": false,
+"track_count": 0,
+"playlist_count": 1,
+"plan": "Free",
+"public_favorites_count": 1,
+"followers_count": 0,
+"followings_count": 0,
+"subscriptions": [
+
+]
+}
+
+
+Tracks samples:
+https://api.soundcloud.com/users/3399796/tracks.json?client_id=090d817d0884669e83f49198015105ef
+http://jsonviewer.stack.hu
+
+
+
+////My User Account Info
+//User info: https://api.soundcloud.com/users/138071006.json?client_id=090d817d0884669e83f49198015105ef
+//Track :  https://api.soundcloud.com/users/138071006/tracks.json?client_id=090d817d0884669e83f49198015105ef
+
+//Other User Account Info to get the tracks.
+///https://api.soundcloud.com/users/3399796.json?client_id=090d817d0884669e83f49198015105ef
+////https://api.soundcloud.com/users/3399796/tracks.json?client_id=090d817d0884669e83f49198015105ef
+///http://jsonviewer.stack.hu

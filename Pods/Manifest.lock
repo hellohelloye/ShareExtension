@@ -1,0 +1,33 @@
+PODS:
+  - FontAwesome+iOS (0.1.4)
+  - HexColors (2.2.1)
+  - Mantle (1.5.4):
+    - Mantle/extobjc (= 1.5.4)
+  - Mantle/extobjc (1.5.4)
+  - Masonry (0.6.1)
+  - ReactiveCocoa (2.4.7):
+    - ReactiveCocoa/UI (= 2.4.7)
+  - ReactiveCocoa/Core (2.4.7):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.4.7)
+  - ReactiveCocoa/UI (2.4.7):
+    - ReactiveCocoa/Core
+  - TSMessages (0.9.12):
+    - HexColors
+
+DEPENDENCIES:
+  - FontAwesome+iOS
+  - Mantle
+  - Masonry
+  - ReactiveCocoa
+  - TSMessages
+
+SPEC CHECKSUMS:
+  FontAwesome+iOS: 816c20304edef4ca92835de669577005cbaaf261
+  HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
+  Mantle: d5fbaf30fbc58031223af13812c060e15934a1fe
+  Masonry: 2cb49fd14d203d2db5ca6bb017135b235dde9980
+  ReactiveCocoa: 313fc53cc9aeb2bbbc3f5f13c7eac16478d9af8f
+  TSMessages: b2b5dc71f65146387e51f2600bb0eb8f3a6c4ab8
+
+COCOAPODS: 0.36.0.rc.1
