@@ -16,6 +16,6 @@
 @property (nonatomic, strong) NSArray *arrayModelData;
 
 - (RACSignal *)fetchJSONFromURL:(NSURL *)url;
-- (RACSignal *)fetchSpecificJsonDataToModel;
-- (RACSignal *)updateDataFromURL;
+- (RACSignal *)fetchSpecificJsonDataToModel:(NSString *)permalink;
+- (RACSignal *)updateDataFromURL:(NSString *)permalink;
 @end

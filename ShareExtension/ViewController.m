@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ServiceManager.h"
 
 @interface ViewController ()
 
@@ -32,19 +33,20 @@
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.shareExtension.YE"];
     NSString *sharedText = [sharedDefaults objectForKey:@"stringKey"];
     
-    NSLog(@"shared context: %@", sharedText);//purpuse: to get current user's permalink from shareAction inside soundCloud app.
+    NSLog(@"shared context: %@", sharedText);//purpuse: to get current user's permalink from shareAction inside soundCloud app.  between string "by" - "on"
+    
+    [[ServiceManager sharedSingleton] updateDataFromURL:sharedText];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
     
     [self updateShareContent];
+    
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>65BCE5D8-05FC-4C6B-9DB9-CDD753D87E1D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ShareExtension</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1E9B3954200C5780A567D1A5A9009EADB382D4F4</key>
+		<string>github.com:hellohelloye/ShareExtension.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ShareExtension.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1E9B3954200C5780A567D1A5A9009EADB382D4F4</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:hellohelloye/ShareExtension.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1E9B3954200C5780A567D1A5A9009EADB382D4F4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1E9B3954200C5780A567D1A5A9009EADB382D4F4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ShareExtension</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -59,19 +59,26 @@
     }];
 }
 
-- (RACSignal *)fetchSpecificJsonDataToModel {
-    NSURL *url = [NSURL URLWithString:@"https://api.soundcloud.com/users/3399796/tracks.json?client_id=090d817d0884669e83f49198015105ef"];
+- (RACSignal *)fetchSpecificJsonDataToModel:(NSString *)permalink {
+    NSURL *url;
+    if (permalink != nil) {  //get USER_ID by using permalink
+        url = [NSURL URLWithString:@"https://api.soundcloud.com/users/3399796/tracks.json?client_id=090d817d0884669e83f49198015105ef"];
+    } else {
+        url = [NSURL URLWithString:@"https://api.soundcloud.com/users/3399796/tracks.json?client_id=090d817d0884669e83f49198015105ef"];
+    }
     return [[self fetchJSONFromURL:url] map:^(NSDictionary *json) {
-        RACSequence *list = [json[@""] rac_sequence];
+        RACSequence *list = [json rac_sequence];
         return [[list map:^(NSDictionary *item) {
             return [MTLJSONAdapter modelOfClass:[SampleModel class] fromJSONDictionary:item error:nil];
         }] array];
     }];
 }
 
-- (RACSignal *)updateDataFromURL {
-    return [[self fetchSpecificJsonDataToModel] subscribeNext:^(NSArray *arrayFromURLdata) {
+- (RACSignal *)updateDataFromURL:(NSString *)permalink {
+    return [[self fetchSpecificJsonDataToModel:permalink] subscribeNext:^(NSArray *arrayFromURLdata) {
         self.arrayModelData = arrayFromURLdata;
+        
+        NSLog(@"get soundCloud Tracks model array: %@", self.arrayModelData);
     }];
 }
 

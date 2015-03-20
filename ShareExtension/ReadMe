@@ -39,6 +39,64 @@ Tracks samples:
 https://api.soundcloud.com/users/3399796/tracks.json?client_id=090d817d0884669e83f49198015105ef
 http://jsonviewer.stack.hu
 
+<RACArraySequence: 0x7fe459f5ccb0>{ name = , array = (
+{
+"artwork_url" = "https://i1.sndcdn.com/artworks-000110580755-dkwsw4-large.jpg";
+"attachments_uri" = "https://api.soundcloud.com/tracks/196688188/attachments";
+bpm = "<null>";
+"comment_count" = 8;
+commentable = 1;
+"created_at" = "2015/03/19 18:40:01 +0000";
+description = "MitiS\nhttps://soundcloud.com/mitis\nhttps://www.facebook.com/Mitismusic\nhttps://twitter.com/mitisofficial\nhttps://www.youtube.com/user/MitisMusic\n\nArtwork by Sylvain Sarrailh\nhttp://fav.me/d6dufvr";
+"download_count" = 0;
+downloadable = 0;
+duration = 368412;
+"embeddable_by" = all;
+"favoritings_count" = 333;
+genre = "Drum & Bass";
+id = 196688188;
+isrc = "<null>";
+"key_signature" = "<null>";
+kind = track;
+"label_id" = "<null>";
+"label_name" = "<null>";
+"last_modified" = "2015/03/19 19:47:57 +0000";
+license = "all-rights-reserved";
+"original_content_size" = 15030928;
+"original_format" = mp3;
+permalink = "mitis-living-color";
+"permalink_url" = "http://soundcloud.com/mrsuicidesheep/mitis-living-color";
+"playback_count" = 3836;
+policy = ALLOW;
+"purchase_title" = Download;
+"purchase_url" = "http://bit.ly/1C15MFA";
+release = "<null>";
+"release_day" = "<null>";
+"release_month" = "<null>";
+"release_year" = "<null>";
+sharing = public;
+state = finished;
+"stream_url" = "https://api.soundcloud.com/tracks/196688188/stream";
+streamable = 1;
+"tag_list" = "";
+title = "MitiS - Living Color";
+"track_type" = "<null>";
+uri = "https://api.soundcloud.com/tracks/196688188";
+user =         {
+"avatar_url" = "https://i1.sndcdn.com/avatars-000131887198-iugjwb-large.jpg";
+id = 3399796;
+kind = user;
+"last_modified" = "2015/03/18 18:53:50 +0000";
+permalink = mrsuicidesheep;
+"permalink_url" = "http://soundcloud.com/mrsuicidesheep";
+uri = "https://api.soundcloud.com/users/3399796";
+username = MrSuicideSheep;
+};
+"user_id" = 3399796;
+"video_url" = "<null>";
+"waveform_url" = "https://w1.sndcdn.com/8g46CjLA2qRR_m.png";
+},
+
 
 
 ////My User Account Info
