@@ -23,6 +23,7 @@
         self.user_username = sampleModel.user_username;
         self.artwork_url = [self getIconImg: sampleModel.artwork_url];
         self.user_avatar_url = [self getIconImg: sampleModel.user_avatar_url];
+        self.track_id = sampleModel.id;
     }
     return self;
 }

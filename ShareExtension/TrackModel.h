@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *artwork_url;
 @property (nonatomic, strong) NSString *user_username;
 @property (nonatomic, strong) NSString *user_avatar_url;
+@property (nonatomic, strong) NSString *track_id;
 
 - (id)initWithSampleModel:(SampleModel *)sampleModel;
 @end

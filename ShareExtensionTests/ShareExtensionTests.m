@@ -17,17 +17,22 @@
 
 - (void)setUp {
     [super setUp];
+    
+    XCTAssertTrue(@"hiiii");
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     [super tearDown];
+    XCTAssertTrue(@"eeeeee");
 }
 
-- (void)testExample {
+- (void)testCard {
     // This is an example of a functional test case.
     XCTAssert(YES, @"Pass");
+    
+    XCTAssertTrue(@"aaaaaa");
 }
 
 - (void)testPerformanceExample {
