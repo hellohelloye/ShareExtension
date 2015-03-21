@@ -20,6 +20,8 @@
 		09CF16DF1ABA875C0038C88B /* ServiceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CF16DE1ABA875C0038C88B /* ServiceManager.m */; };
 		09CF16E51ABA8BAD0038C88B /* SampleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CF16E41ABA8BAD0038C88B /* SampleModel.m */; };
 		09CF16E71ABA90A60038C88B /* ReadMe in Resources */ = {isa = PBXBuildFile; fileRef = 09CF16E61ABA90A60038C88B /* ReadMe */; };
+		09D111BB1ABC9C9A00048341 /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D111BA1ABC9C9A00048341 /* Card.m */; };
+		09D111BF1ABCD8E100048341 /* TrackModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 09D111BE1ABCD8E100048341 /* TrackModel.m */; };
 		6FD41CDB5C9BBFC5FB8AD947 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CBAFCF885E4A29D3E318D042 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,10 @@
 		09CF16E31ABA8BAD0038C88B /* SampleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleModel.h; sourceTree = "<group>"; };
 		09CF16E41ABA8BAD0038C88B /* SampleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleModel.m; sourceTree = "<group>"; };
 		09CF16E61ABA90A60038C88B /* ReadMe */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe; sourceTree = "<group>"; };
+		09D111B91ABC9C9A00048341 /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
+		09D111BA1ABC9C9A00048341 /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		09D111BD1ABCD8E100048341 /* TrackModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrackModel.h; sourceTree = "<group>"; };
+		09D111BE1ABCD8E100048341 /* TrackModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrackModel.m; sourceTree = "<group>"; };
 		659C028FB1711E3976B1A674 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		756ECC14FB159333AF7ABA9E /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		CBAFCF885E4A29D3E318D042 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,10 +145,11 @@
 				09CF16DC1ABA7BB10038C88B /* ShareExtension.entitlements */,
 				09CF16A51ABA7AFA0038C88B /* AppDelegate.h */,
 				09CF16A61ABA7AFA0038C88B /* AppDelegate.m */,
+				09CF16AB1ABA7AFA0038C88B /* Main.storyboard */,
 				09CF16E21ABA8A4E0038C88B /* Controller */,
 				09CF16E11ABA8A400038C88B /* Model */,
 				09CF16E01ABA87680038C88B /* ConnServer */,
-				09CF16AB1ABA7AFA0038C88B /* Main.storyboard */,
+				09D111BC1ABC9CB000048341 /* View */,
 				09CF16AE1ABA7AFA0038C88B /* Images.xcassets */,
 				09CF16B01ABA7AFA0038C88B /* LaunchScreen.xib */,
 				09CF16A11ABA7AFA0038C88B /* Supporting Files */,
@@ -211,6 +218,8 @@
 			children = (
 				09CF16E31ABA8BAD0038C88B /* SampleModel.h */,
 				09CF16E41ABA8BAD0038C88B /* SampleModel.m */,
+				09D111BD1ABCD8E100048341 /* TrackModel.h */,
+				09D111BE1ABCD8E100048341 /* TrackModel.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -222,6 +231,15 @@
 				09CF16A91ABA7AFA0038C88B /* ViewController.m */,
 			);
 			name = Controller;
+			sourceTree = "<group>";
+		};
+		09D111BC1ABC9CB000048341 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				09D111B91ABC9C9A00048341 /* Card.h */,
+				09D111BA1ABC9C9A00048341 /* Card.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		1BCB8325C78438633A1F53AA /* Frameworks */ = {
@@ -421,10 +439,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				09CF16E51ABA8BAD0038C88B /* SampleModel.m in Sources */,
+				09D111BF1ABCD8E100048341 /* TrackModel.m in Sources */,
 				09CF16AA1ABA7AFA0038C88B /* ViewController.m in Sources */,
 				09CF16A71ABA7AFA0038C88B /* AppDelegate.m in Sources */,
 				09CF16A41ABA7AFA0038C88B /* main.m in Sources */,
 				09CF16DF1ABA875C0038C88B /* ServiceManager.m in Sources */,
+				09D111BB1ABC9C9A00048341 /* Card.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

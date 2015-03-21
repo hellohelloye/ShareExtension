@@ -77,8 +77,11 @@
 - (RACSignal *)updateDataFromURL:(NSString *)permalink {
     return [[self fetchSpecificJsonDataToModel:permalink] subscribeNext:^(NSArray *arrayFromURLdata) {
         self.arrayModelData = arrayFromURLdata;
-        
-        NSLog(@"get soundCloud Tracks model array: %@", self.arrayModelData);
+        NSMutableArray *arrayHelper = [[NSMutableArray alloc] init];
+        for (int i = 0; i <= 8; i++) {
+            [arrayHelper addObject:[[TrackModel alloc] initWithSampleModel:self.arrayModelData[i]]];
+        }
+        self.trackArray = [arrayHelper copy];
     }];
 }
 
