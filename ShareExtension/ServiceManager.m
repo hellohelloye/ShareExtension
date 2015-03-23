@@ -31,7 +31,7 @@
     return self;
 }
 
-- (RACSignal *)fetchJSONFromURL:(NSURL *)url {
+- (RACSignal *)fetchJSONFromURL: (NSURL *)url {
     return [[RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
         NSURLSessionDataTask *dataTask = [self.session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
             if (! error) {
@@ -59,14 +59,9 @@
     }];
 }
 
-- (RACSignal *)fetchSpecificJsonDataToModel:(NSString *)permalink {
-    NSURL *url;
-    if (permalink != nil) {  //get USER_ID by using permalink
-        url = [NSURL URLWithString:@"https://api.soundcloud.com/users/3399796/tracks.json?client_id=090d817d0884669e83f49198015105ef"];
-    } else {
-        url = [NSURL URLWithString:@"https://api.soundcloud.com/users/3399796/tracks.json?client_id=090d817d0884669e83f49198015105ef"];
-    }
-    return [[self fetchJSONFromURL:url] map:^(NSDictionary *json) {
+//testing sample track link
+- (RACSignal *)fetchSpecificJsonDataToModel: (NSString *)permalink {
+    return [[self fetchJSONFromURL: [NSURL URLWithString:@"https://api.soundcloud.com/users/3399796/tracks.json?client_id=090d817d0884669e83f49198015105ef"]] map:^(NSDictionary *json) {
         RACSequence *list = [json rac_sequence];
         return [[list map:^(NSDictionary *item) {
             return [MTLJSONAdapter modelOfClass:[SampleModel class] fromJSONDictionary:item error:nil];
@@ -74,7 +69,8 @@
     }];
 }
 
-- (RACSignal *)updateDataFromURL:(NSString *)permalink {
+///////// testing model
+- (RACSignal *)updateDataFromURL: (NSString *)permalink {
     return [[self fetchSpecificJsonDataToModel:permalink] subscribeNext:^(NSArray *arrayFromURLdata) {
         self.arrayModelData = arrayFromURLdata;
         NSMutableArray *arrayHelper = [[NSMutableArray alloc] init];
@@ -84,5 +80,17 @@
         self.trackArray = [arrayHelper copy];
     }];
 }
+
+//generic permalink generate track infos
+//- (RACSignal *)fetchSpecificJsonDataToModel: (NSString *)permalink {
+//    return [[self fetchJSONFromURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://api.soundcloud.com/resolve.json?url=%@&client_id=df5d294f55d41469a70fc50c8b7040a4",permalink]]] map:^(NSDictionary *userInfoDictionary) {
+//        return [[self fetchJSONFromURL: [NSURL URLWithString:[NSString stringWithFormat:@"https://api.soundcloud.com/users/%@/tracks.json?client_id=090d817d0884669e83f49198015105ef", [userInfoDictionary valueForKey:@"id"]]]] map:^(NSDictionary *json) {
+//            RACSequence *list = [json rac_sequence];
+//            return [[list map:^(NSDictionary *item) {
+//                return [MTLJSONAdapter modelOfClass:[SampleModel class] fromJSONDictionary:item error:nil];
+//            }] array];
+//        }];
+//    }];
+//}
 
 @end

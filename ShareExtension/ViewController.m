@@ -14,6 +14,7 @@
 @property (strong, nonatomic) NSArray *cardArray;
 @property (nonatomic) NSInteger flipCnt;
 @property (strong, nonatomic) Card *oldCard;
+@property (strong, nonatomic) NSString *sharedText;
 @property (nonatomic) NSInteger cardViewCVCnt;
 @end
 
@@ -33,29 +34,52 @@
     [self updateShareContent];
 }
 
+//purpuse: to get current user's permalink from shareAction inside soundCloud app.  between string "by" - "on"
+//parse string...  eg: input "sharedText = @"xxx by little iphone on kkkkkkk";" output: "little-iphone"
+- (NSString *)getPermalink:(NSString *)sharedText {
+    sharedText = @"xxx by mrsuicidesheep on #SoundCloud";
+    //sharedText = @"xxx by little iphone on #SoundCloud";
+    NSRange startRange = [sharedText rangeOfString:@"by"];
+    NSRange endRange = [sharedText rangeOfString:@"on #SoundCloud"];
+    
+    NSRange searchRange = NSMakeRange(startRange.location + startRange.length + 1, endRange.location - startRange.location - 4);
+    NSString *userName = [NSString stringWithString :[sharedText substringWithRange:searchRange]];
+    NSLog(@"user name : %@", userName);
+    for (NSUInteger index = 0; index < [userName length]; index++) {
+        if ([userName characterAtIndex:index] == ' ') {
+           userName = [userName stringByReplacingOccurrencesOfString:@" " withString:@"-"];
+        }
+    }
+    NSLog(@"Permalink: %@", userName);
+    return [NSString stringWithFormat:@"https://soundcloud.com/%@", userName];
+}
+
 - (void)updateShareContent {
     NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.shareExtension.YE"];
-    NSString *sharedText = [sharedDefaults objectForKey:@"stringKey"];
+    self.sharedText = [sharedDefaults objectForKey:@"stringKey"];
     
-    NSLog(@"shared context: %@", sharedText);//purpuse: to get current user's permalink from shareAction inside soundCloud app.  between string "by" - "on"
-    //parse string...
-    [[ServiceManager sharedSingleton] updateDataFromURL:sharedText];
-    self.cardArray = [[ServiceManager sharedSingleton] trackArray];
+    //TESTING
+    self.sharedText = @"xxx by mrsuicidesheep on kkkkkkk";
+    NSLog(@"shared context: %@", self.sharedText);
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.flipCnt = 0;
     self.cardViewCVCnt = 8;
     [self updateShareContent];
+    [[ServiceManager sharedSingleton] updateDataFromURL:[self getPermalink:self.sharedText]];
+    
 //    @weakify(self)
-//    [[[self rac_signalForSelector:@selector(updateShareContent)
-//                   fromProtocol:@protocol(UICollectionViewDelegate)]
-//     map:^id(RACTuple *tuple) {
-//        return tuple.second;
-//    }] subscribeNext:^(id x) {
-//        [self.cardPlaygroundCV reloadData];
+//    [[[[[self rac_signalForSelector:@selector(collectionView:cellForItemAtIndexPath:)
+//                      fromProtocol:@protocol(UICollectionViewDataSource)] filter:^BOOL(id value) {
+//        return self.sharedText;
+//    }] skip:2] map:^(NSArray *tuple) {
+//          return  [[ServiceManager sharedSingleton] fetchSpecificJsonDataToModel:[self getPermalink:self.sharedText]];
+//    }] subscribeNext:^(NSArray *cardArray) {
+//          @strongify(self)
+//          self.cardArray = cardArray;
+//          [self.cardPlaygroundCV reloadData];
 //    }];
 }
 

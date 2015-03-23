@@ -3,6 +3,8 @@
 /*
 sample url to get USER ID:
 https://api.soundcloud.com/resolve.json?url=https://soundcloud.com/little-iphone&client_id=df5d294f55d41469a70fc50c8b7040a4
+
+///website json
 {
 "id": 138071006,
 "kind": "user",
@@ -32,6 +34,38 @@ https://api.soundcloud.com/resolve.json?url=https://soundcloud.com/little-iphone
 "subscriptions": [
 
 ]
+}
+
+
+////json getting down on mobile
+{
+"avatar_url" = "https://a1.sndcdn.com/images/default_avatar_large.png";
+city = "<null>";
+country = "<null>";
+description = "<null>";
+"discogs_name" = "<null>";
+"first_name" = "<null>";
+"followers_count" = 0;
+"followings_count" = 0;
+"full_name" = "";
+id = 138071006;
+kind = user;
+"last_modified" = "2015/02/12 00:37:00 +0000";
+"last_name" = "<null>";
+"myspace_name" = "<null>";
+online = 0;
+permalink = "little-iphone";
+"permalink_url" = "http://soundcloud.com/little-iphone";
+plan = Free;
+"playlist_count" = 1;
+"public_favorites_count" = 1;
+subscriptions =     (
+);
+"track_count" = 0;
+uri = "https://api.soundcloud.com/users/138071006";
+username = "little iPhone";
+website = "<null>";
+"website_title" = "<null>";
 }
 
 

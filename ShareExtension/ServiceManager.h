@@ -15,7 +15,8 @@
 
 + (instancetype)sharedSingleton;
 @property (nonatomic, strong) NSArray *arrayModelData;
-@property (nonatomic, strong) NSArray *trackArray;;
+@property (nonatomic, strong) NSArray *trackArray;
+@property (nonatomic, strong) NSString *userId;
 
 - (RACSignal *)fetchJSONFromURL:(NSURL *)url;
 - (RACSignal *)fetchSpecificJsonDataToModel:(NSString *)permalink;
